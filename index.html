@@ -44,7 +44,7 @@
         header {
             background-color: var(--white);
             box-shadow: var(--shadow);
-            padding: 2rem 0 1.5rem;
+            padding: 2rem 0 1rem;
             text-align: center;
         }
 
@@ -56,26 +56,12 @@
             max-width: 300px;
             height: auto;
             margin: 0 auto;
-        }
-
-        .logo-placeholder {
-            width: 300px;
-            height: 120px;
-            background: linear-gradient(45deg, var(--cream) 25%, var(--white) 25%, var(--white) 50%, var(--cream) 50%, var(--cream) 75%, var(--white) 75%);
-            background-size: 20px 20px;
-            margin: 0 auto;
-            border: 2px dashed var(--primary);
-            border-radius: var(--radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-weight: bold;
+            display: block;
         }
 
         /* Hero Section */
         .hero {
-            padding: 4rem 0;
+            padding: 3rem 0 4rem;
             text-align: center;
             background: linear-gradient(135deg, var(--white) 0%, var(--cream) 100%);
             position: relative;
@@ -383,6 +369,12 @@
             border-top: 1px solid var(--light-gray);
         }
 
+        .footer-logo {
+            height: 30px;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
         /* Purchase Modal */
         .modal {
             display: none;
@@ -452,9 +444,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .logo-placeholder {
-                width: 250px;
-                height: 100px;
+            .domain-logo {
+                max-width: 250px;
             }
             
             .modal-content {
@@ -482,11 +473,8 @@
     <header>
         <div class="container">
             <div class="logo-container">
-                <!-- Replace this with your logo -->
-                <div class="logo-placeholder">
-                    Your Logo Here
-                </div>
-                <!-- <img src="images/logo-emergency.png" alt="EmergencyHelicopters.com" class="domain-logo"> -->
+                <!-- VOTRE LOGO ICI -->
+                <img src="images/logo.png" alt="EmergencyHelicopters.com" class="domain-logo">
             </div>
             <h1>EmergencyHelicopters.com</h1>
         </div>
@@ -637,7 +625,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 EmergencyHelicopters.com • Premium Domain For Sale</p>
+            <img src="images/logo-small.png" alt="EmergencyHelicopters.com" class="footer-logo">
+            <p>© 2023 EmergencyHelicopters.com • Premium Domain For Sale</p>
         </div>
     </footer>
 
@@ -712,4 +701,3 @@
     </script>
 </body>
 </html>
-
