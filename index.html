@@ -331,6 +331,112 @@
             color: var(--text-light);
         }
 
+        /* Bonus Section */
+        .bonus {
+            padding: 5rem 0;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .bonus-container {
+            background: linear-gradient(135deg, #f8f5f0 0%, #e8e5e0 100%);
+            border-radius: var(--radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonus-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), #ff9900, var(--primary));
+        }
+
+        .bonus-badge {
+            display: inline-block;
+            background-color: #ff9900;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .bonus-domains {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .bonus-domain {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .bonus-domain:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
+        }
+
+        .bonus-domain::before {
+            content: "FREE";
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .domain-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            word-break: break-all;
+        }
+
+        .domain-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .bonus-text {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-top: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bonus-highlight {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
         /* CTA Section */
         .final-cta {
             padding: 6rem 0;
@@ -436,7 +542,7 @@
                 font-size: 2rem;
             }
             
-            .hero, .features, .use-cases, .final-cta {
+            .hero, .features, .use-cases, .final-cta, .bonus {
                 padding: 4rem 0;
             }
             
@@ -451,6 +557,14 @@
             .modal-content {
                 padding: 2rem;
                 width: 95%;
+            }
+            
+            .bonus-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .bonus-domain {
+                min-width: 100%;
             }
         }
 
@@ -467,6 +581,16 @@
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
     </style>
 </head>
 <body>
@@ -485,7 +609,7 @@
             <h1 class="animate">The Ultimate Domain for <span class="hero-highlight">Emergency Helicopter Services</span></h1>
             <p class="animate delay-1">Acquire the most memorable and impactful domain for rescue services, medical evacuation, and helicopter rescue operations worldwide.</p>
             <div class="animate delay-2">
-                <button class="cta-button" onclick="openModal()">Purchase This Domain</button>
+                <button class="cta-button pulse" onclick="openModal()">Purchase This Domain</button>
                 <a href="#market-data" class="cta-button secondary">View Details</a>
             </div>
         </div>
@@ -544,6 +668,34 @@
                     <div class="appraisal-text">Excellent return on investment through monetization</div>
                     <div class="data-source">High CPC and significant search volume</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bonus">
+        <div class="container">
+            <h2 class="animate">Special Limited Time Offer</h2>
+            <p class="section-subtitle animate delay-1">Get these premium domains for FREE with your purchase</p>
+            
+            <div class="bonus-container animate delay-2">
+                <span class="bonus-badge">Exclusive Bonus</span>
+                <h3>2 Premium Domains Included Free</h3>
+                
+                <div class="bonus-domains">
+                    <div class="bonus-domain">
+                        <div class="domain-name">emergencyhelicopters.info</div>
+                        <p class="domain-desc">Perfect for informational websites, resource centers, and knowledge bases about emergency helicopter services.</p>
+                    </div>
+                    
+                    <div class="bonus-domain">
+                        <div class="domain-name">emergencyhelicopters.link</div>
+                        <p class="domain-desc">Ideal for networking platforms, partner resources, and connection services in the emergency helicopter industry.</p>
+                    </div>
+                </div>
+                
+                <p class="bonus-text">When you purchase <span class="bonus-highlight">EmergencyHelicopters.com</span>, you'll receive these two additional domains at no extra cost - a combined value of over <span class="bonus-highlight">$500</span> absolutely FREE!</p>
+                
+                <button class="cta-button pulse" onclick="openModal()" style="margin-top: 2rem;">Claim Your Bonus Now</button>
             </div>
         </div>
     </section>
@@ -618,7 +770,8 @@
         <div class="container">
             <h2 class="animate">Secure This Premium Domain Today</h2>
             <p class="animate delay-1">Don't miss the opportunity to own this highly valuable domain name. Once it's sold, it's gone forever.</p>
-            <button class="cta-button animate delay-2" onclick="openModal()">Purchase Now</button>
+            <p class="animate delay-1" style="margin-bottom: 1.5rem;"><strong>PLUS: Get 2 bonus domains FREE with your purchase!</strong></p>
+            <button class="cta-button animate delay-2 pulse" onclick="openModal()">Purchase Now & Claim Bonus</button>
         </div>
     </section>
 
@@ -635,6 +788,9 @@
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2>Purchase EmergencyHelicopters.com</h2>
             <p>This premium domain is available for immediate purchase.</p>
+            <p style="color: var(--primary); font-weight: bold; margin: 1rem 0;">
+                <i class="fas fa-gift"></i> Includes FREE: emergencyhelicopters.info & emergencyhelicopters.link
+            </p>
             
             <div style="margin: 2rem 0;">
                 <a href="https://unstoppabledomains.com/d/emergencyhelicopters.com" target="_blank" class="cta-button">
@@ -700,5 +856,3 @@
     </script>
 </body>
 </html>
-
-
